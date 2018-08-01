@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <h1 id="head">
+         Stop and Shop
+    </h1>
+    <style>
+        
+       body{
+           margin-top: 5%;
+            background-color: wheat;
+            align-items: center;
+        }
+        label{
+            align-content: flex-start;
+        }
+        div{ 
+            text-align: center;
+            background-color: white; 
+            border-radius: 5px;
+            background-color: #FFF;
+            padding: 20px;
+        }
+        button{
+             height: 40px;
+            align-items: center;
+            width: 50%;
+            background-color: lightgreen;
+        } 
+        input{
+            height: 40px;
+            border: 1px solid black;
+            background-color: whitesmoke;
+            align-items: center;
+            width: 50%;
+        }
+        #head{
+            color: brown;
+        }
+    </style>        
+    </head>
+    <body>
+        <div >
+            <form action="reg" method="post">
+                
+                <label for="cid"><b>Customer Id</b></label>
+                <br>
+                <input type="text" placeholder="Enter Id" name="cid" required>
+                <br><br> <br>    
+                <label for="cname"><b>Customer Name</b></label>
+                <br>
+                <input type="text" placeholder="Enter Name" name="cname" required>
+                <br><br> <br>                 
+                <label for="cpass"><b>Customer Password</b></label>
+                <br>
+                <input type="password" placeholder="Enter Password" name="cpass" required>
+                <br><br> <br>                 
+                 <p>By creating an account you agree to our Terms and Conditions</p>
+                 <button type="submit" >Register</button>
+                   <br> <br> <br> 
+            </form>
+        </div>
+    </body>
+</html>

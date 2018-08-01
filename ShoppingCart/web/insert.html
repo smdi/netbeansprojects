@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <h1 id="head">
+         Stop and Shop
+    </h1>
+    <style>
+        
+       body{
+           margin-top: 5%;
+            background-color: wheat;
+            align-items: center;
+        }
+        label{
+            align-content: flex-start;
+        }
+        div{ 
+            text-align: center;
+            background-color: white; 
+            border-radius: 5px;
+            background-color: #FFF;
+            padding: 20px;
+        }
+        button{
+             height: 40px;
+            align-items: center;
+            width: 50%;
+            background-color: lightgreen;
+        } 
+        input{
+            height: 40px;
+            border: 1px solid black;
+            background-color: whitesmoke;
+            align-items: center;
+            width: 50%;
+        }
+        #head{
+            color: brown;
+        }
+    </style>        
+    </head>
+    <body>
+        <div >
+            <form action="insert" method="post">
+                
+                <label for="pcode"><b>Product Code</b></label>
+                <br>
+                <input type="text" placeholder="enter product code" name="pcode" required>
+                <br><br> <br>    
+                <label for="pname"><b>Product Name</b></label>
+                <br>
+                <input type="text" placeholder="enter product name" name="pname" required>
+                <br><br> <br>                 
+                <label for="pqty"><b>Product Quantity</b></label>
+                <br>
+                <input type="text" placeholder="enter product quantity" name="pqty" required>
+                <br><br> <br>  
+                <label for="pprice"><b>Product Price</b></label>
+                <br>
+                <input type="text" placeholder="enter product price" name="pprice" required>
+                <br><br> <br>  
+                 <p>By inserting you agree to our Terms and Conditions</p>
+                 <button type="submit" >Insert</button>
+                <br> <br> <br> 
+                <p>
+                     Account Logout  <a href='logout'> Logout</a>
+                </p>
+            </form>
+        </div>
+    </body>
+</html>

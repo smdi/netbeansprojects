@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <h1 id="head">
+         Stop and Shop
+    </h1>
+    <style>
+        
+       body{
+           margin-top: 5%;
+            background-color: wheat;
+            align-items: center;
+        }
+        label{
+            align-content: flex-start;
+        }
+        div{ 
+            text-align: center;
+            background-color: white; 
+            border-radius: 5px;
+            background-color: #FFF;
+            padding: 20px;
+        }
+        button{
+             height: 40px;
+            align-items: center;
+            width: 50%;
+            background-color: lightgreen;
+        } 
+        input{
+            height: 40px;
+            border: 1px solid black;
+            background-color: whitesmoke;
+            align-items: center;
+            width: 50%;
+        }
+        #head{
+            color: brown;
+        }
+    </style>        
+    </head>
+    <body>
+        <div >
+            <form action="delete" method="post">
+                 <label for="pcode"><b>Product Code</b></label>
+                <br>
+                <input type="text" placeholder="enter product code" name="pcode" required>
+                <br><br> <br> 
+                 <p>By deleting you agree to our Terms and Conditions</p>
+                 <button type="submit" >Delete</button>
+                   <br> <br> <br> 
+                   <p>
+                    Account Logout  <a href='logout'> Logout</a>
+                  </p> 
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <h1 id="head">
+         <!-- ShoppingKart -->
+    </h1>
+    <style>
+        
+       body{
+
+
+       		width: 100%;
+           /*margin-top: 5%;*/
+            background-color: lightgray;
+            align-items: center;
+            background-image: url("images/onli.png"); 
+        }
+        
+        label{
+            align-content: flex-start;
+        }
+        div{ 
+        	margin-top: 10%;
+        	margin-left: 37%;
+        	height: 300px;
+        	width: 25%;
+            text-align: center;
+            background-color: white; 
+            border-radius: 5px;
+            background-color: #FFF;
+            padding: 20px;
+        }
+        button{
+             height: 40px;
+            align-items: center;
+            width: 100%;
+            background-color: lightgreen;
+            border-radius: 5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid green;
+            color:white;
+        } 
+        
+        button:hover {
+            background-color: green;
+        }
+        input{
+            height: 40px;
+            border: 1px solid lightgray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid lightblue;
+            background-color: whitesmoke;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+        }
+       
+        h1{
+        	text-align: center;
+        	font-family: verdana;
+        	color: blue;
+        	
+        }
+        label{
+        	font-family: verdana;
+        }
+        #submit{
+        	margin-top: 10px;
+        }
+        #username{
+        	margin-top: 20px;	
+        }
+        #password{
+        	margin-top: 10px;
+        }
+    </style>             
+    </head>
+    <body>
+        <div>
+
+            <form action="log" method="post">
+                <h2 style="color:green">Shopping Kart</h2>
+                
+                <input type="text" placeholder="Enter username" name="username" required id="username">
+                
+                <input type="text" placeholder="Enter password" name="password" required id="password">
+                   
+                <button type="submit" id="submit">
+                    Login 
+                </button>
+                <br> <br> <br>
+                <p>
+                    Don't have Account  <a href='userreg.html'> Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </body>
+</html>
+

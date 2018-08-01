@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <h1 id="head">
+         Stop and Shop
+    </h1>
+    <style>
+        
+       body{
+           margin-top: 5%;
+            background-color: wheat;
+            align-items: center;
+        }
+        label{
+            align-content: flex-start;
+        }
+        div{ 
+            text-align: center;
+            background-color: white; 
+            border-radius: 5px;
+            background-color: #FFF;
+            padding: 20px;
+        }
+        button{
+             height: 40px;
+            align-items: center;
+            width: 50%;
+            background-color: lightgreen;
+        } 
+        input{
+            height: 20px;
+            border: 1px solid black;
+            background-color: whitesmoke;
+/*            align-items: center;*/
+            width: 20%;
+        }
+        #head{
+            color: brown;
+        }
+        
+    </style>        
+    </head>
+    <body>
+        <div >
+            <form action="adminhome" method="post">
+                
+                <label for="update"><b>Update Products</b></label>
+                <br>
+                <input type="radio" name="input" value="update">
+                <br><br> <br>    
+                <label for="insert"><b>Insert Products</b></label>
+                <br>
+                <input type="radio" name="input" value="insert">
+                <br><br> <br>                   
+                <label for="delete"><b>Delete Products</b></label>
+                <br>
+                <input type="radio" name="input" value="delete">
+                <br><br> <br>        
+                <button type="submit" >
+                    NEXT >>
+                </button>
+                <br><br><br>
+                <p>
+                    Account Logout  <a href='logout'> Logout</a>
+                </p>
+            </form>
+        </div>
+    </body>
+</html>
