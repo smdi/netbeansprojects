@@ -2,19 +2,28 @@
 <html>
     <head>
     <h1 id="head">
-         Stop and Shop
+         <!-- ShoppingKart -->
     </h1>
     <style>
         
        body{
-           margin-top: 5%;
-            background-color: wheat;
+
+
+            width: 100%;
+           /*margin-top: 5%;*/
+            background-color: lightgray;
             align-items: center;
+            background-image: url("images/onli.png"); 
         }
+        
         label{
             align-content: flex-start;
         }
         div{ 
+            margin-top: 10%;
+            margin-left: 37%;
+            height: 300px;
+            width: 25%;
             text-align: center;
             background-color: white; 
             border-radius: 5px;
@@ -24,42 +33,113 @@
         button{
              height: 40px;
             align-items: center;
-            width: 50%;
+            width: 100%;
             background-color: lightgreen;
+            border-radius: 5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid green;
+            color:white;
         } 
-        input{
-            height: 20px;
-            border: 1px solid black;
-            background-color: whitesmoke;
-/*            align-items: center;*/
-            width: 20%;
+        
+        button:hover {
+            background-color: green;
         }
-        #head{
-            color: brown;
+        input{
+            height: 40px;
+            border: 1px solid lightgray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid lightblue;
+            background-color: whitesmoke;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+        }
+       
+        h1{
+            text-align: center;
+            font-family: verdana;
+            color: blue;
+            
         }
         
-    </style>        
+        .small{
+
+          width: 2em;
+          height: 2em;
+
+        }
+        label{
+            font-family: verdana;
+        }
+        #submit{
+            margin-top: 10px;
+        }
+        #update{
+            margin-top: 20px;   
+        }
+        #insert{
+            margin-top: 10px;
+        }
+        #delete{
+            margin-top: 10px;
+        }
+    </style>             
     </head>
     <body>
         <div >
             <form action="adminhome" method="post">
                 
-                <label for="update"><b>Update Products</b></label>
-                <br>
-                <input type="radio" name="input" value="update">
-                <br><br> <br>    
-                <label for="insert"><b>Insert Products</b></label>
-                <br>
-                <input type="radio" name="input" value="insert">
-                <br><br> <br>                   
-                <label for="delete"><b>Delete Products</b></label>
-                <br>
-                <input type="radio" name="input" value="delete">
-                <br><br> <br>        
-                <button type="submit" >
+                <table width='100%'  style='margin-top: 10px; border-collapse: collapse ; border: 5px solid white;'>
+               
+
+                 <tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:lightgray ; color:white ; text-align:center'>   
+
+
+             
+
+                 <th width="20%"><input type="radio" name="input" value="update" id="update"  class="small"> </th>   
+                 <th width="80%">Update</th>
+
+            </tr>
+                    
+
+                 <tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:lightgray ; color:white ; text-align:center'>   
+
+
+             
+
+                 <th width="20%"><input type="radio" name="input" value="insert" id="insert"  class="small"></th>   
+                 <th width="80%">Insert </th>
+
+            </tr>
+                    
+
+                 <tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:lightgray ; color:white ; text-align:center'>   
+
+
+             
+
+                 <th><input type="radio" name="input" value="delete" id="delete" class="small"></th>   
+                 <th>Delete</th>
+
+            </tr>
+    
+
+
+            <tr >
+                    <th colspan="2"><button type="submit" >
                     NEXT >>
-                </button>
-                <br><br><br>
+                </button></th>
+           </tr>
+                    
+             </table>
+
+                <br><br>
                 <p>
                     Account Logout  <a href='logout'> Logout</a>
                 </p>

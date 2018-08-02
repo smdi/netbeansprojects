@@ -41,48 +41,44 @@ public class UserHomeServlet extends HttpServlet {
         PrintWriter pw = res.getWriter();
         
         pw.println("<html><head>");
+      
+        pw.println("</head><body style='background : whitesmoke '>");
         
-        pw.println("<title>Shopping Cart</title>");
+        pw.println("<table width='100%' height='100%'  style='border-collapse: collapse'>");
         
-        pw.println("</head><body>");
+        pw.println("<tr style='background-color:lightgreen'>");
         
-        pw.println("<table width='100%' height='90%' border='1'>");
+        pw.println("<td align='center' height='50px' colspan='2'>");
         
-        pw.println("<tr align='center'>");
-        
-        pw.println("<td height='39' colspan='2'>");
-        
-        pw.println("<strong><font size='5'>Stop and Shop</font>");
+        pw.println("<strong><font size='6' style='color:white'>Shopping Kart&emsp;&emsp;&emsp;&emsp;Welcome , "+uname+"</font>");
         
         pw.println("</strong></td>");
         
         pw.println("</tr>");
 
-        pw.println("<tr>");
+        pw.println("<tr >");
         
-        pw.println("<td width='18%' height='500' valign = 'top'>");
+        pw.println("<td style='background-color:white ' width='18%' height='500' valign = 'top'>");
         
         pw.println("<p>&nbsp;</p>");
         
-        pw.println("<blockquote><p>");
+        pw.println("<blockquote><p><ul style='list-style-type: none;margin: 0; margin-top: 10px;  padding: 0;display:block;background-color:#ddd;'>");
         
-        pw.println("<a href='"+res.encodeURL("getProducts")+"' >");
+        pw.println("<li style='display:block;background-color:#ddd'><a href='"+res.encodeURL("getProducts")+"' >");
         
-        pw.println("View Products </a></p>");
+        pw.println("View Products </a></li></p>");
         
-        pw.println("<a href='"+res.encodeURL("getCart")+"' >");
+        pw.println("<li><a   href='"+res.encodeURL("getCart")+"' >");
         
-        pw.println("View Cart Details </a></p>");
+        pw.println("View Cart Details </a></li></p>");
        
-        pw.println("<a href='"+res.encodeURL("logout")+"' >");
+        pw.println("<li><a href='"+res.encodeURL("logout")+"' >");
         
-        pw.println("Logout </a></p>");
+        pw.println("Logout </a></li></ul></p>");
         
         pw.println("</blockquote></td>");
         
         pw.println("<td width = '82%' align='left' valign ='top'>");
-       
-        pw.println("<font size='6'>Welcome , "+uname+"</font> </td>");
         
         pw.println("</tr>");
      

@@ -2,19 +2,28 @@
 <html>
     <head>
     <h1 id="head">
-         Stop and Shop
+         
     </h1>
     <style>
         
        body{
-           margin-top: 5%;
-            background-color: wheat;
+
+
+            width: 100%;
+           /*margin-top: 5%;*/
+            background-color: lightgray;
             align-items: center;
+            background-image: url("images/onli.png"); 
         }
+        
         label{
             align-content: flex-start;
         }
         div{ 
+            margin-top: 10%;
+            margin-left: 37%;
+            height: 300px;
+            width: 25%;
             text-align: center;
             background-color: white; 
             border-radius: 5px;
@@ -24,44 +33,117 @@
         button{
              height: 40px;
             align-items: center;
-            width: 50%;
+            width: 100%;
             background-color: lightgreen;
+            border-radius: 5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid green;
+            color:white;
         } 
+        
+        button:hover {
+            background-color: green;
+        }
         input{
             height: 40px;
-            border: 1px solid black;
+            border: 1px solid lightgray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid lightblue;
             background-color: whitesmoke;
             align-items: center;
-            width: 50%;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
         }
-        #head{
-            color: brown;
+       
+        h1{
+            text-align: center;
+            font-family: verdana;
+            color: blue;
+            
         }
-    </style>        
+        
+        .small{
+
+          width: 2em;
+          height: 2em;
+
+        }
+        label{
+            font-family: verdana;
+        }
+        #submit{
+            margin-top: 10px;
+        }
+        #update{
+            margin-top: 20px;   
+        }
+        #insert{
+            margin-top: 10px;
+        }
+        #delete{
+            margin-top: 10px;
+        }
+    </style>             
     </head>
     <body>
         <div >
-    <form action="update" method="post">
+            <form action="adminhome" method="post">
                 
-                <label for="pcode"><b>Product Code</b></label>
-                <br>
-                <input type="text" placeholder="enter product code" name="pcode" required>
-                <br><br> <br>    
-                <label for="pqty"><b>Product Quantity</b></label>
-                <br>
-                <input type="text" placeholder="enter product quantity" name="pqty" value="0">
-                <br><br> <br>  
-                <label for="pprice"><b>Product Price</b></label>
-                <br>
-                <input type="text" placeholder="enter product price" name="pprice" value="0">
-                <br><br> <br>  
-                 <p>By updating you agree to our Terms and Conditions</p>
-                 <button type="submit" >Update</button>
-                   <br> <br> <br> 
-                   <p>
-                   Account Logout  <a href='logout'> Logout</a>
-                   </p>
-            </form>       
+                <table width='100%'  style='margin-top: 10px; border-collapse: collapse ; border: 5px solid white;'>
+               
+
+                 <tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:lightgray ; color:white ; text-align:center'>   
+
+
+             
+
+                 <th >Product Code </th>   
+                 <th ><input type="text" placeholder="enter product quantity" name="pqty" value="0"></th>
+
+            </tr>
+                    
+
+                 <tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:lightgray ; color:white ; text-align:center'>   
+
+
+             
+
+                 <th >Product Quantity</th>   
+                 <th ><input type="text" placeholder="enter product quantity" name="pqty" value="0"></th>
+
+            </tr>
+                    
+
+                 <tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:lightgray ; color:white ; text-align:center'>   
+
+
+             
+
+                 <th>Product Price</th>   
+                 <th><input type="text" placeholder="enter product price" name="pprice" value="0"></th>
+
+            </tr>
+    
+
+
+            <tr >
+                    <th colspan="2"><button type="submit" >
+                    NEXT >>
+                </button></th>
+           </tr>
+                    
+             </table>
+
+                <br><br>
+                <p>
+                    Account Logout  <a href='logout'> Logout</a>
+                </p>
+            </form>
         </div>
     </body>
 </html>

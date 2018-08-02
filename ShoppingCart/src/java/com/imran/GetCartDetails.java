@@ -45,57 +45,51 @@ public class GetCartDetails extends HttpServlet {
         
         PrintWriter pw = res.getWriter();
         
-        pw.println("<html><head>");
+         pw.println("<html><head>");
+      
+        pw.println("</head><body style='background : whitesmoke '>");
         
-        pw.println("<title>Shopping Cart</title>");
+        pw.println("<table width='100%' height='100%'  style='border-collapse: collapse'>");
         
-        pw.println("</head><body>");
+        pw.println("<tr style='background-color:lightgreen'>");
         
-        pw.println("<table width='100%' height='90%' border='1'>");
+        pw.println("<td align='center' height='50px' colspan='2'>");
         
-        pw.println("<tr align='center'>");
-        
-        pw.println("<td height='39' colspan='2'>");
-        
-        pw.println("<strong><font size='5'>Stop and Shop</font>");
+        pw.println("<strong><font size='6' style='color:white'>Shopping Kart&emsp;&emsp;&emsp;&emsp;Welcome , "+uname+"</font>");
         
         pw.println("</strong></td>");
         
         pw.println("</tr>");
 
-        pw.println("<tr>");
+        pw.println("<tr >");
         
-        pw.println("<td width='18%' height='500' valign = 'top'>");
+        pw.println("<td style='background-color:white ' width='18%' height='500' valign = 'top'>");
         
         pw.println("<p>&nbsp;</p>");
         
-        pw.println("<blockquote><p>");
+        pw.println("<blockquote><p><ul style='list-style-type: none;margin: 0; margin-top: 10px;  padding: 0;display:block;background-color:#ddd;'>");
         
-        pw.println("<a href='"+res.encodeURL("getProducts")+"' >");
+        pw.println("<li style='display:block;background-color:#ddd'><a href='"+res.encodeURL("getProducts")+"' >");
         
-        pw.println("View Products </a></p>");
+        pw.println("View Products </a></li></p>");
         
-        pw.println("<a href='"+res.encodeURL("getCart")+"' >");
+        pw.println("<li><a   href='"+res.encodeURL("getCart")+"' >");
         
-        pw.println("View Cart Details </a></p>");
+        pw.println("View Cart Details </a></li></p>");
        
-        pw.println("<a href='"+res.encodeURL("logout")+"' >");
+        pw.println("<li><a href='"+res.encodeURL("logout")+"' >");
         
-        pw.println("Logout </a></p>");
+        pw.println("Logout </a></li></ul></p>");
         
         pw.println("</blockquote></td>");
         
-        pw.println("<td width = '82%' align='left' valign ='top'><p>");
-       
-        pw.println("<font size='6'>Welcome , "+uname+"</font></p>");
-       
-//        pw.println("<center>Your Cart Contains following Products</center>");
+        pw.println("<td width = '82%' align='left' valign ='top'><p  style='background-color:blue ; color : white;'>");
         
         pw.println("<form method='post' action='payment'>");
 
-        pw.println("<table width='100%' border='2'>");
+        pw.println("<table width='100%'  style='border-collapse: collapse ; border: 5px solid white;'>");
         
-        pw.println("<tr>");
+        pw.println("<tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:lightgray ; color:white ; text-align:center'>");
         
         pw.println("<th width='15%'>Product Code</th>");
         
@@ -106,8 +100,6 @@ public class GetCartDetails extends HttpServlet {
         pw.println("<th width='15%'>Product Price</th>");
         
         pw.println("<th width='15%'> Total  </th>");
-        
-//        pw.println("<th align='center'><button type='submit' value='remove'>Remove </button></th>");
         
         pw.println("</tr>");
         
@@ -146,7 +138,6 @@ public class GetCartDetails extends HttpServlet {
                 
                 pw.println("<td>"+pb.getTprice()+"</td>");
                 
-//                pw.println("<td align='center'><input type='checkbox'></td>");
                 
                 pw.println("</tr>");
                 
@@ -159,7 +150,7 @@ public class GetCartDetails extends HttpServlet {
         
         if(which == 0){
             
-        pw.println("<td colspan='6' align='center'><br><button type='submit'>Make Payment</button><br><br></td>");
+        pw.println("<td colspan='6' align='center'><br><button style='width:150px;height:30px; color:white;  background-color:slateblue ; border-top:none; border-bottom :blue ; border-left:none ;border-right:none ;' type='submit'>Make Payment</button><br><br></td>");
         
         }
         pw.println("</table></center>");
