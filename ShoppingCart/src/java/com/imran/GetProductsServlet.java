@@ -75,19 +75,19 @@ public class GetProductsServlet extends HttpServlet {
         
         pw.println("<p>&nbsp;</p>");
         
-        pw.println("<blockquote><p>");
+        pw.println("<blockquote><p><ul style='list-style-type: none;margin: 0; margin-top: 10px;  padding: 0;display:block;background-color:#ddd;'>");
         
-        pw.println("<a href='"+res.encodeURL("getProducts")+"' >");
+        pw.println("<li style='display:block;background-color:#ddd'><a href='"+res.encodeURL("getProducts")+"' >");
         
-        pw.println("View Products </a></p>");
+        pw.println("View Products </a></li></p>");
         
-        pw.println("<a href='"+res.encodeURL("getCart")+"' >");
+        pw.println("<li><a   href='"+res.encodeURL("getCart")+"' >");
         
-        pw.println("View Cart Details </a></p>");
+        pw.println("View Cart Details </a></li></p>");
        
-        pw.println("<a href='"+res.encodeURL("logout")+"' >");
+        pw.println("<li><a href='"+res.encodeURL("logout")+"' >");
         
-        pw.println("Logout </a></p>");
+        pw.println("Logout </a></li></ul></p>");
         
         pw.println("</blockquote></td>");
         
