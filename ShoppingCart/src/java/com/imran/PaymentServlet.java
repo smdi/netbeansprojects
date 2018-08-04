@@ -101,9 +101,6 @@ public class PaymentServlet extends HttpServlet {
         pw.println("<td width = '82%' align='left' valign ='top'><p>");
        
         
-       
-//        pw.println("<center>Your Cart Contains following Products</center>");
-        
         pw.println("<form method='post' action='payment'>");
 
         pw.println("<table width = '82%' align='left' valign ='top'><p style='background-color:blue ; color : white;'>");
@@ -133,7 +130,7 @@ public class PaymentServlet extends HttpServlet {
         
         if(ct ==  null){
             
-            pw.println("<tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:white ; color:text ; text-align:center'><td colspan='5' >");
+            pw.println("<tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:white ; color:black ; text-align:center'><td colspan='5' >");
             
             pw.println("You have not Added any products yet !!!!");
 
@@ -161,7 +158,7 @@ public class PaymentServlet extends HttpServlet {
                 
                  if(rec){
                      
-                     pw.println("<tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:white ; color:white ; text-align:center'>");
+                     pw.println("<tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:white ; color:black ; text-align:center'>");
                      
                      pw.println("<td align='center' colspan='5'>\n the products "+pb.getPname()+" availabiltity is less</td>");
                      
@@ -169,7 +166,7 @@ public class PaymentServlet extends HttpServlet {
                      
                  }
                  else{
-                     pw.println("<tr  style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:white ; color:white ; text-align:center'>");
+                     pw.println("<tr  style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:white ; color:black ; text-align:center'>");
                 
                 
                 pw.println("<td align='center'>"+pb.getPname().toLowerCase()+"</td>");

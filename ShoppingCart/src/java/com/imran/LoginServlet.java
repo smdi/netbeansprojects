@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
  
  private  String cid ="",cname="",sql="";
  private  Connection con = null;
- private  HttpSession hs,hs1 = null;
+ private  HttpSession hs = null;
  private  UserDao ud ;
  private  AdminDao ad;
  private  StoreDetails sd;
@@ -62,7 +62,7 @@ public class LoginServlet extends HttpServlet {
   
         
         hs  = req.getSession();
-        hs1 = req.getSession();
+        
         
         
          String who= sd.getWho();
@@ -72,12 +72,8 @@ public class LoginServlet extends HttpServlet {
             hs.setAttribute("username",cid);
                    RequestDispatcher rd = req.getRequestDispatcher("userhome"); //success
                    rd.include(req, res);
-
-                  
- 
-                    
-
- 
+               System.out.println("\n attribute added");    
+    
         }
         else if(who.equals("admin")){
     
@@ -85,7 +81,7 @@ public class LoginServlet extends HttpServlet {
                    RequestDispatcher rd = req.getRequestDispatcher("adminlogin.html"); //success
                    rd.include(req, res);
 
-                  
+             System.out.println("\n attribute added");         
 
         }
         
