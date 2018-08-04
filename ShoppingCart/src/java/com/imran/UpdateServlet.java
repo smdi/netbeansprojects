@@ -24,7 +24,6 @@ public class UpdateServlet extends HttpServlet {
    
     
     private DbOperations dbo = null;
-    private String pname ;
     private String pcode , pqty , pprice;
     
     public void init(){
@@ -51,15 +50,19 @@ public class UpdateServlet extends HttpServlet {
             pqty  = req.getParameter("pqty"); 
             pprice  = req.getParameter("pprice");
             
-           if(Integer.parseInt(pqty)==0  && pprice.length()>0){
+            int code  = Integer.parseInt(pcode);
+            int qty   = Integer.parseInt(pqty);
+            int price = Integer.parseInt(pprice);
+            
+           if(qty==0  && price>0){
                
-               setDone("update products set pprice = "+ pprice +" where pcode= "+pcode+"",rd ,req,res,pw);
+               setDone("update products set pprice = "+price+" where pcode="+code+"",rd ,req,res,pw);
            }
-           else if(pqty.length()>0  && Integer.parseInt(pqty)==0){
-               setDone("update products set pqty = "+ pqty +" where pcode= "+pcode+"",rd ,req,res,pw);
+           else if(qty>0  && price==0){
+               setDone("update products set pqty = "+qty+" where pcode="+code+"",rd ,req,res,pw);
            }
-           else if(pqty.length()>0  && pprice.length()>0){
-               setDone("update products set pqty = "+ pqty +" ,pprice = "+ pprice +"  where pcode= "+pcode+"",rd ,req,res,pw);
+           else if(qty>0  && price>0){
+               setDone("update  products set pqty = "+qty+" ,  pprice = "+price+"  where pcode="+code+"",rd ,req,res,pw);
            }
            else {
                 rd.include(req,res);
@@ -86,7 +89,7 @@ public class UpdateServlet extends HttpServlet {
                 
                 rd.include(req,res);
                 pw.println(" Updated Records Successfully !!!");
-                pw.println();
+                pw.println("</div>");
                 pw.println();
                 pw.println();
             }
@@ -94,7 +97,7 @@ public class UpdateServlet extends HttpServlet {
                 
                 rd.include(req,res);
                 pw.println(" Unable to update the records !!!");
-                pw.println();
+                pw.println("</div>");
                 pw.println();
                 pw.println();
             }

@@ -92,29 +92,23 @@
     </head>
     <body>
         <div >
-            <form action="adminhome" method="post">
+            <form action="update" method="post">
                 
                 <table width='100%'  style='margin-top: 10px; border-collapse: collapse ; border: 5px solid white;'>
                
 
                  <tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:lightgray ; color:white ; text-align:center'>   
 
-
-             
-
                  <th >Product Code </th>   
-                 <th ><input type="text" placeholder="enter product quantity" name="pqty" value="0"></th>
+                 <th ><input type="number" placeholder="enter product quantity" name="pcode" value="0"></th>
 
             </tr>
                     
 
                  <tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:lightgray ; color:white ; text-align:center'>   
 
-
-             
-
                  <th >Product Quantity</th>   
-                 <th ><input type="text" placeholder="enter product quantity" name="pqty" value="0"></th>
+                 <th ><input type="number" placeholder="enter product quantity" name="pqty" value="0"></th>
 
             </tr>
                     
@@ -125,7 +119,7 @@
              
 
                  <th>Product Price</th>   
-                 <th><input type="text" placeholder="enter product price" name="pprice" value="0"></th>
+                 <th><input type="number" placeholder="enter product price" name="pprice" value="0"></th>
 
             </tr>
     
@@ -144,6 +138,6 @@
                     Account Logout  <a href='logout'> Logout</a>
                 </p>
             </form>
-        </div>
+        
     </body>
 </html>
