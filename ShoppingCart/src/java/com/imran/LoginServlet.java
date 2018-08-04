@@ -23,12 +23,14 @@ public class LoginServlet extends HttpServlet {
  private  HttpSession hs,hs1 = null;
  private  UserDao ud ;
  private  AdminDao ad;
+ private  StoreDetails sd;
+ private ServletContext sct;
    
  public void init(){
        
     ud = new UserDao();
     ad = new AdminDao();
-       
+   
    }
  
  @Override
@@ -47,43 +49,49 @@ public class LoginServlet extends HttpServlet {
        cid  = req.getParameter("username");
        cname  = req.getParameter("password");
        
+       
+       
      try{  
          
     
+         sct = req.getServletContext();
+         
+         sd = (StoreDetails)  sct.getAttribute("who");
+         
         con  = DBConnection.getCon();
   
         
         hs  = req.getSession();
         hs1 = req.getSession();
         
-        if(ud.validate(cid, cname)){
+        
+         String who= sd.getWho();
+                
+        if(who.equals("user")){
           
             hs.setAttribute("username",cid);
                    RequestDispatcher rd = req.getRequestDispatcher("userhome"); //success
                    rd.include(req, res);
-//                   pw.println("User Login Success");
+
                   
+ 
+                    
 
  
         }
-        else if(ad.validate(cid, cname)){
+        else if(who.equals("admin")){
     
              hs.setAttribute("username",cid);
                    RequestDispatcher rd = req.getRequestDispatcher("adminlogin.html"); //success
                    rd.include(req, res);
-//                   pw.println("Admin Login Success");
+
                   
 
         }
-        else{
-           
-                   RequestDispatcher rd = req.getRequestDispatcher("ulogin.html"); //failed
-                   rd.include(req, res);
-                   pw.println("Invalid username or password");
-        }
+        
         
     
-   } catch (NullPointerException |SQLException ex) {
+   } catch (Exception ex) {
          
        
         pw.println(""+ex);                    

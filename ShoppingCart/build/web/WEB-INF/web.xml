@@ -48,6 +48,14 @@
         <servlet-name>PaymentServlet</servlet-name>
         <servlet-class>com.imran.PaymentServlet</servlet-class>
     </servlet>
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.imran.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/log</url-pattern>
+    </filter-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/log</url-pattern>
