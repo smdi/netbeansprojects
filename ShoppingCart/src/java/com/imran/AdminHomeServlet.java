@@ -24,7 +24,7 @@ public class AdminHomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         
         
-        HttpSession hs  = req.getSession();
+        HttpSession hs  = req.getSession(false);
         
         if(hs == null){
            
@@ -34,7 +34,7 @@ public class AdminHomeServlet extends HttpServlet {
             
             
         }
-        
+        else { 
         String inputs   = req.getParameter("input");
         
         if(inputs.equals("update")){
@@ -43,7 +43,7 @@ public class AdminHomeServlet extends HttpServlet {
         }
         else if(inputs.equals("insert")){
                 
-            dispatch("insert.html" ,req ,res);
+            dispatch("insert.jsp" ,req ,res);
                  
         }
         else if(inputs.equals("delete")){
@@ -53,6 +53,7 @@ public class AdminHomeServlet extends HttpServlet {
         }
     }
 
+    }
     private void dispatch(String string, HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
        
           

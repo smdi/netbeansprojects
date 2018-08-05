@@ -46,6 +46,8 @@ public class MySessionListener implements HttpSessionListener , HttpSessionAttri
     @Override
     public void attributeRemoved(HttpSessionBindingEvent event) {
         
+        
+        
         out.println("\n attribute removed from session");
         
         out.println("\n name  "+event.getName());

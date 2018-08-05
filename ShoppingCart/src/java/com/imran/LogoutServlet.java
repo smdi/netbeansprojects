@@ -24,28 +24,41 @@ public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         
         
+        PrintWriter pw  = res.getWriter();
         
+        res.setHeader("Pragma","no-cache");
         res.setHeader("Cache-Control","no-cache");
         res.setHeader("Cache-Control","no-store");
-        res.setDateHeader("Expires", 0); 
-        res.setHeader("Pragma","no-cache");
+        res.setHeader("Expires","0");
+        res.setDateHeader("Expires", -1);
         
+        
+        try{
         
         HttpSession hs = req.getSession(false);
         
-        if(hs != null)
-        {   
-            
-            hs.removeAttribute("username");
-            hs.invalidate();
-        } 
+           
+        hs.removeAttribute("username");
+        hs.invalidate();
         
-         
+      hs = req.getSession(false);
+        
+      
+        if(hs == null){
         RequestDispatcher rd = req.getRequestDispatcher("ulogin.html");
             
-        rd.include(req, res);
+        rd.forward(req, res);   
+
+//            res.sendRedirect("http://localhost:8084/ShoppingCart/ulogin.html");
+       } 
+       
         
-        
+        }
+        catch(Exception e){
+            
+        }
+        RequestDispatcher rd = req.getRequestDispatcher("ulogin.html"); //success
+              rd.include(req, res);
         
     }
 

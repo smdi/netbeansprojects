@@ -38,7 +38,7 @@ public class GetProductsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException  {
         
-        HttpSession hs  = req.getSession();
+        HttpSession hs  = req.getSession(false);
         
         if(hs == null){
             
@@ -46,6 +46,7 @@ public class GetProductsServlet extends HttpServlet {
              rd.forward(req, res);
         
         }
+        else{
         
          String uname  = (String)hs.getAttribute("username");
         
@@ -186,7 +187,7 @@ public class GetProductsServlet extends HttpServlet {
             pw.flush();
             
             pw.close();
-            
+        }
     }
     
 }

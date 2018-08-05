@@ -25,7 +25,7 @@ public class UserHomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         
         
-        HttpSession hs = req.getSession();
+        HttpSession hs = req.getSession(false);
         
         if(hs == null){
             
@@ -33,7 +33,7 @@ public class UserHomeServlet extends HttpServlet {
             rd.forward(req,res);
             
         }
-        
+        else{
         String uname  = (String)hs.getAttribute("username");
         
         res.setContentType("text/html");
@@ -98,6 +98,6 @@ public class UserHomeServlet extends HttpServlet {
         
         pw.close();
         
+      }
     }
-    
 }

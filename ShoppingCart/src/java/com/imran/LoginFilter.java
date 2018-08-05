@@ -50,7 +50,8 @@ public class LoginFilter extends HttpServlet implements Filter {
       
         PrintWriter pw = res.getWriter();
        
-       res.setContentType("text/html");
+        res.setContentType("text/html");
+        
        
        cid  = req.getParameter("username");
        cname  = req.getParameter("password");
@@ -81,9 +82,11 @@ public class LoginFilter extends HttpServlet implements Filter {
         }
         else{
              
-                    req.getRequestDispatcher("ulogin.html");
-                   pw.println("In Filter Invalid username or password");
-                   
+                    RequestDispatcher rd =  req.getRequestDispatcher("ulogin.html");
+                    rd.include(req, res);
+                    pw.println("<div style='background-color:white ; color:red;text-align: center;margin-left: 37%; margin-right: 35%;width=25% ; height=25px; '>");
+                    pw.println("\n Invalid username and password");
+                    pw.println("</div>");
         }
         
     

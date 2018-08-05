@@ -40,7 +40,7 @@ public class AddProductsServlet extends HttpServlet {
             
             
         }
-        
+        else{
         String uname  =  (String)hs.getAttribute("username");
         
         ArrayList al = (ArrayList)hs.getAttribute("products");
@@ -162,6 +162,9 @@ public class AddProductsServlet extends HttpServlet {
         pw.flush();
         
         pw.close();
+        
+        } 
+        
     }
 
 }

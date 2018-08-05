@@ -2,19 +2,28 @@
 <html>
     <head>
     <h1 id="head">
-         Stop and Shop
+         <!-- ShoppingKart -->
     </h1>
     <style>
         
        body{
-           margin-top: 5%;
-            background-color: wheat;
+
+
+       		width: 100%;
+           /*margin-top: 5%;*/
+            background-color: lightgray;
             align-items: center;
+            background-image: url("images/onli.png"); 
         }
+        
         label{
             align-content: flex-start;
         }
         div{ 
+        	margin-top: 10%;
+        	margin-left: 37%;
+        	height: 320px;
+        	width: 25%;
             text-align: center;
             background-color: white; 
             border-radius: 5px;
@@ -24,40 +33,62 @@
         button{
              height: 40px;
             align-items: center;
-            width: 50%;
+            width: 100%;
             background-color: lightgreen;
+            border-radius: 5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid green;
+            color:white;
         } 
+        
+        button:hover {
+            background-color: green;
+        }
         input{
             height: 40px;
-            border: 1px solid black;
+            border: 1px solid lightgray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid lightblue;
             background-color: whitesmoke;
             align-items: center;
-            width: 50%;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
         }
-        #head{
-            color: brown;
+       
+        h1{
+        	text-align: center;
+        	font-family: verdana;
+        	color: blue;
+        	
         }
-    </style>        
+        label{
+        	font-family: verdana;
+        }
+      
+    </style>             
     </head>
     <body>
         <div >
             <form action="reg" method="post">
+                <h2 style="color:green">Shopping Kart</h2>
                 
-                <label for="cid"><b>Customer Id</b></label>
                 <br>
                 <input type="text" placeholder="Enter Id" name="cid" required>
-                <br><br> <br>    
-                <label for="cname"><b>Customer Name</b></label>
-                <br>
+                <br>    
+                
                 <input type="text" placeholder="Enter Name" name="cname" required>
-                <br><br> <br>                 
-                <label for="cpass"><b>Customer Password</b></label>
-                <br>
+                <br>                
+                
                 <input type="password" placeholder="Enter Password" name="cpass" required>
-                <br><br> <br>                 
+                <br>                
                  <p>By creating an account you agree to our Terms and Conditions</p>
                  <button type="submit" >Register</button>
-                   <br> <br> <br> 
+                   <br>  
             </form>
         </div>
     </body>

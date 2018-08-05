@@ -42,7 +42,8 @@ public class PaymentServlet extends HttpServlet {
 
           
         float grandTotal =0;
-          HttpSession hs = req.getSession();
+         
+        HttpSession hs = req.getSession(false);
                   
           if(hs == null){
               
@@ -53,7 +54,7 @@ public class PaymentServlet extends HttpServlet {
               
           }
           
-          
+          else{  
         String uname  = (String)hs.getAttribute("username");
         
         res.setContentType("text/html");
@@ -239,5 +240,5 @@ public class PaymentServlet extends HttpServlet {
         
     }
 
-   
+    }
 }
