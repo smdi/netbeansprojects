@@ -8,90 +8,11 @@
 <%@page import="com.imran.DBConnection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import = "java.sql.*" %>
-
+<%@page errorPage="error.jsp" %>
 <jsp:include page="insert.html" flush="true"/>
+<%@taglib uri="/WEB-INF/tlds/result.tld"  prefix="dbtags" %>
 
-<%!
-   
-    private DbOperations dbo = null ;
-    
-    private String pname ;
-   
-    int count;
-  
-    private int pcode , pqty , pprice;
-    
-    static Connection con =null ;
-  
-    static Statement stmt = null ;
-
-    ResultSet rs = null;
-   
-    ResultSetMetaData rsmd =  null; 
- 
-static{
-    try { 
-         con  = DBConnection.getCon();
- 
-         stmt = con.createStatement();
-
-        }
-  catch(Exception e){
-      
-      e.printStackTrace();
-  }
-
-}
-
-public void init(){
-        
-        dbo  =  new DbOperations();
-    
-    }
-
-%>
-
-
-<%
-
-try  {
-    
-        
-            pname  = request.getParameter("pname");
-            pcode  = Integer.parseInt(request.getParameter("pcode"));
-            pqty  = Integer.parseInt(request.getParameter("pqty")); 
-            pprice  = Integer.parseInt(request.getParameter("pprice"));
-            
-            boolean done  =  dbo.operate("insert into products values("+pcode+",'"+ pname +"',"+pqty+","+pprice+")");
-        
-            if(done){
-               
-                
-               
-                out.println(" Inserted Records Successfully !!!");
-                out.println();
-                out.println();
-                out.println();
-            }
-            else{
-                
-                
-                out.println(" Unable to insert the records !!!");
-                out.println();
-                out.println();
-                out.println();
-            }
-     
-            
-            rs   =  stmt.executeQuery("select * from products");
-            
-            rsmd = rs.getMetaData();
-            
-            count= rsmd.getColumnCount();
-
- %>   
-    
- <html><head>
+<html><head>
  </head><body >
      <style>
         
@@ -102,74 +23,29 @@ try  {
             background-image: url("images/onli.png"); 
         }
         </style>
- <table width='100%'  style='border-collapse: collapse ; border: 5px solid white;'>
- <tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:lightgray ; color:white ; text-align:center'>
  
- <%   
+
+
+<%!
+   
+    private String pname ;
  
-   for(int i = 1 ;i<=count ; i++){
+    private int pcode , pqty , pprice;
 
- %>    
-     
-  <th width='24%'><%=rsmd.getColumnName(i)%></th> 
+%>
 
-  <%
-  
-   }
-  %>
- 
-  </tr>
- <%
-    
-   while(rs.next()){
-       
- %> 
-  <tr style=' height:35px;  padding-top:20px ; padding-bottom:20px ; font-family:verdana ; color:black ;background-color:white; text-align:left'>
 
-    <%   
- 
-   for(int i = 1 ;i<=count ; i++){
-
- %>    
-     
-  <td align='center' width='24%'><%= rs.getString(i).toLowerCase()%></td> 
-
-  <%
-  
-   }
-  %>
- 
-  </tr>  
-      
 <%
-
-}
-%>
-</table></body></html>  
-<%  
-}
-catch( Exception e){
-
-        e.printStackTrace();
-}
-
-%>
-<br><br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
+            pname  = request.getParameter("pname");
+            pcode  = Integer.parseInt(request.getParameter("pcode"));
+            pqty  = Integer.parseInt(request.getParameter("pqty")); 
+            pprice  = Integer.parseInt(request.getParameter("pprice"));
+  
+ %>   
+ 
+ 
+ 
+<dbtags:username>
+   <jsp:expression> pcode +"@"+pname + "@" + pqty + "@" + pprice  </jsp:expression>
+</dbtags:username>  
