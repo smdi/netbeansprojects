@@ -25,33 +25,7 @@ public class InsertTag extends BodyTagSupport {
    
      private DbOperations dbo = null ;
     
-     int count;
-     
-     static Connection con =null ;
-  
-     static Statement stmt = null ;
-
-     ResultSet rs = null;
-   
-     ResultSetMetaData rsmd =  null; 
- 
-     static{
     
-         try { 
-         con  = DBConnection.getCon();
-
-         stmt = con.createStatement();
-
-        }
-  catch(Exception e){
-      
-      e.printStackTrace();
-  }
-
-}
-     
-     
-     
     @Override
     public int doEndTag(){
         
@@ -97,40 +71,8 @@ public class InsertTag extends BodyTagSupport {
                 out.println();
             }
      
-            rs   =  stmt.executeQuery("select * from products");
-            
-            rsmd = rs.getMetaData();
-            
-            count= rsmd.getColumnCount();
-            
-            out.println("<table width='100%'  style='border-collapse: collapse ; border: 5px solid white;'>");
-            
-            out.println("<tr style='position:sticky; height:50px;  padding-top:20px ; padding-bottom:20px ; font-family:Arial ; background-color:lightgray ; color:white ; text-align:center'>");
-            
-            for(int i = 1 ;i<=count ; i++){
-                
-                
-                out.println("<th width='24%'>"+rsmd.getColumnName(i)+"</th>");
-	        
-            }
-            
-            out.println("</tr>");
-            
-            
-             while(rs.next()){
-          
-                 out.println(" <tr style=' height:35px;  padding-top:20px ; padding-bottom:20px ; font-family:verdana ; color:black ;background-color:white; text-align:left'>");
-                 
-                 for(int i = 1 ;i<=count ; i++){
-                     
-                     
-                     out.println(" <td align='center' width='24%'>"+ rs.getString(i).toLowerCase()+"</td> ");
-                 }
-                 
-             }
-            
-             out.println("</tr>");
-             out.println("</table></body></html> ");
+            DisplayRecords dr  = new DisplayRecords();
+            dr.doDisplay(out);
             
         } catch (IOException | SQLException ex) {
             ex.printStackTrace();

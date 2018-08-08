@@ -4,8 +4,7 @@
     Author     : Imran
 --%>
 
-<%@page import="com.imran.DbOperations"%>
-<%@page import="com.imran.DBConnection"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import = "java.sql.*" %>
 <%@page errorPage="error.jsp" %>

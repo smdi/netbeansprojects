@@ -39,7 +39,7 @@ public class AdminHomeServlet extends HttpServlet {
         
         if(inputs.equals("update")){
     
-            dispatch("update.html" ,req ,res);
+            dispatch("update.jsp" ,req ,res);
         }
         else if(inputs.equals("insert")){
                 
@@ -48,7 +48,7 @@ public class AdminHomeServlet extends HttpServlet {
         }
         else if(inputs.equals("delete")){
              
-            dispatch("delete.html" ,req ,res);
+            dispatch("delete.jsp" ,req ,res);
              
         }
     }
