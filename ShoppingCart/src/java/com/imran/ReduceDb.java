@@ -5,11 +5,13 @@
  */
 package com.imran;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.servlet.jsp.JspWriter;
 
 /**
  *
@@ -20,7 +22,7 @@ public class ReduceDb {
     
    
     
-    public boolean reduceFromDB(int pcode , int qty ,PrintWriter pw) throws SQLException{
+    public boolean reduceFromDB(int pcode , int qty ,JspWriter pw) throws SQLException, IOException{
   
         
         Connection con =  null;

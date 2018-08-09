@@ -34,70 +34,10 @@ public class UserHomeServlet extends HttpServlet {
             
         }
         else{
-        String uname  = (String)hs.getAttribute("username");
         
-        res.setContentType("text/html");
-        
-        PrintWriter pw = res.getWriter();
-        
-        pw.println("<html><head>");
-      
-        pw.println("</head><body style='background : whitesmoke '>");
-        
-        pw.println("<table width='100%' height='100%'  style='border-collapse: collapse'>");
-        
-        pw.println("<tr style='background-color:lightgreen'>");
-        
-        pw.println("<td align='center' height='50px' colspan='2'>");
-        
-        pw.println("<strong><font size='6' style='color:white'>Shopping Kart&emsp;&emsp;&emsp;&emsp;Welcome , "+uname+"</font>");
-        
-        pw.println("</strong></td>");
-        
-        pw.println("</tr>");
-
-        pw.println("<tr >");
-        
-        pw.println("<td style='background-color:white ' width='18%' height='500' valign = 'top'>");
-        
-        pw.println("<p>&nbsp;</p>");
-        
-        pw.println("<blockquote><p><ul style='list-style-type: none;margin: 0; margin-top: 10px;  padding: 0;display:block;background-color:#ddd;'>");
-        
-        pw.println("<li style='display:block;background-color:#ddd'><a href='"+res.encodeURL("getProducts")+"' >");
-        
-        pw.println("View Products </a></li></p>");
-        
-        pw.println("<li><a   href='"+res.encodeURL("getCart")+"' >");
-        
-        pw.println("View Cart Details </a></li></p>");
-       
-        pw.println("<li><a href='"+res.encodeURL("logout")+"' >");
-        
-        pw.println("Logout </a></li></ul></p>");
-        
-        pw.println("</blockquote></td>");
-        
-        pw.println("<td width = '82%' align='left' valign ='top'>");
-        
-        pw.println("</tr>");
-     
-        pw.println("<tr align='center'>");
-        
-        pw.println("<td colspan='2'>");
-        
-        pw.println("<em>&copy; Copyrights 2018-2019</em>");
-    
-        pw.println("</tr>");
-        
-        pw.println("</table>");
-    
-        pw.println("</body></html>");
-        
-        pw.flush();
-        
-        pw.close();
-        
+             RequestDispatcher rd = req.getRequestDispatcher("userhome.jsp");
+            rd.include(req, res);
+            
       }
     }
 }

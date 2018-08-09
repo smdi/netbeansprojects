@@ -49,7 +49,6 @@ public class LogoutServlet extends HttpServlet {
             
         rd.forward(req, res);   
 
-//            res.sendRedirect("http://localhost:8084/ShoppingCart/ulogin.html");
        } 
        
         
