@@ -8,6 +8,7 @@ package com.imran;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +36,14 @@ public class LogoutServlet extends HttpServlet {
         
         try{
         
+          ServletContext sc = req.getServletContext();
+          
+//          sc.removeAttribute("logout");
+          
+         sc.setAttribute("logout", 1);
+        
+         
+         System.out.println("in logout"+sc.getAttribute("logout"));
         HttpSession hs = req.getSession(false);
         
            

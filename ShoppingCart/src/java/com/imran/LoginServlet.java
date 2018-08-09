@@ -50,13 +50,14 @@ public class LoginServlet extends HttpServlet {
        cname  = req.getParameter("password");
        
        
+       sct = req.getServletContext();
        
-     try{  
-         
-    
-         sct = req.getServletContext();
-         
-         sd = (StoreDetails)  sct.getAttribute("who");
+       sd = (StoreDetails)  sct.getAttribute("who");
+       
+       int log = (int) sct.getAttribute("logout");
+       
+       if(log == 0){
+          try{  
          
         con  = DBConnection.getCon();
   
@@ -84,6 +85,11 @@ public class LoginServlet extends HttpServlet {
              System.out.println("\n attribute added");         
 
         }
+        else if(who.equals(null)){
+            RequestDispatcher rd = req.getRequestDispatcher("ulogin.html");
+           rd.forward(req,res);
+        }
+        
         
         
     
@@ -92,9 +98,17 @@ public class LoginServlet extends HttpServlet {
        
         pw.println(""+ex);                    
      } 
-
+ 
+       }
+       else{
+            RequestDispatcher rd = req.getRequestDispatcher("ulogin.html");
+           rd.forward(req,res);
+        }
+       
+       
 }
 
+   
 }
     
     

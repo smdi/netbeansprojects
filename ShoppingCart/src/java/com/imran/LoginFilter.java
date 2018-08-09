@@ -71,12 +71,17 @@ public class LoginFilter extends HttpServlet implements Filter {
           
             sd.setWho("user");
             cxt.setAttribute("who", sd);
+        
+          
+         cxt.setAttribute("logout", 0);
+        
             chain.doFilter(req, res);
         }
         else if(ad.validate(cid, cname)){
     
              sd.setWho("admin");
              cxt.setAttribute("who", sd);
+             cxt.setAttribute("logout", 0);
              chain.doFilter(req, res);
              
         }
